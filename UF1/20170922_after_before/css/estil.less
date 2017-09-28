@@ -1,0 +1,116 @@
+a {
+    display: block;
+    padding-left: 35px;
+    font-size: 1.3em;
+    margin: 20px;
+    transition: background-position 0.25s;
+}
+
+a[href] {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 2px center;
+}
+
+a:hover {
+    background-color: #fdf37d;
+    background-position: -30px center;
+}
+
+a[href$="pdf"] {
+    background-image: url(../../imatges/pdf.jpg);
+}
+
+a[href$="xls"] {
+    background-image: url(../../imatges/excel_icon.jpg);
+}
+
+//----------------------------------
+//
+// proves amb :after i :before 
+//
+//----------------------------------
+a:after {
+    content: "(" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+}
+
+a {
+    counter-increment: comptador_links;
+}
+
+a:before {
+    content: counter(comptador_links) ".- ";
+    color: #180f4b;
+    font-weight: bolder;
+}
+
+//---------------------------------------
+@radi: 60px;
+i.bola_de_drac {
+    position: relative;
+    background-color: #ebbb1a;
+    border: 2px solid #efbc79;
+    border-radius: 50%;
+    display: block;
+    width: @radi*2;
+    height: @radi*2;
+    font-style: normal;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f87800+0,f64903+58,d12a05+62,e54608+99 */
+    background: #f87800;
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #f87800 0%, #f64903 58%, #d12a05 62%, #e54608 99%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #f87800 0%, #f64903 58%, #d12a05 62%, #e54608 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at 30% 30%, #f87800 0%, #f64903 65%, #d12a05 66%, #e54608 99%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+i.bola_de_drac:after {
+    content: "★";
+    color: #cf2302;
+    font-size: @radi;
+    display: block;
+    width: @radi*2;
+    height: @radi*2;
+    text-align: center; // centrat horitzontal d'un text a una capsa
+    line-height: @radi*2; // centrat vertical d'un text a una capsa
+}
+
+i.bola_de_drac:before {
+    content: "";
+    display: block;
+    width: @radi*0.55;
+    height: @radi*0.55;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    margin-top: @radi/2;
+    margin-left: ~"calc(100% -" @radi*0.75 ~")";
+    opacity: 0.6;
+}
+
+//------------------------------
+.socials {
+    display: block;
+    background-color: #8064f5;
+    padding: 20px;
+}
+
+.socials li {
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    color: #514191;
+    margin-left: 20px;
+    -webkit-box-shadow: 10px 8px 36px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 8px 36px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 8px 36px 6px rgba(0, 0, 0, 0.75);
+}
