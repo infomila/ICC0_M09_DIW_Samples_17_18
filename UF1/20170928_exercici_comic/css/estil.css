@@ -80,7 +80,7 @@
   border-top-color: #959516;
 }
 .harvey:before {
-  background-image: url(../images/hd.png);
+  background-image: url("../images/hd.png");
 }
 .joker {
   background-color: #239a67;
@@ -90,5 +90,5 @@
   border-top-color: #239a67;
 }
 .joker:before {
-  background-image: url(../images/joker.png);
+  background-image: url("../images/joker.png");
 }

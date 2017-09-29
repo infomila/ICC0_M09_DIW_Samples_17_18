@@ -80,24 +80,21 @@
     background-image: url(../images/batman.png);
 }
 
-.harvey {
-    background-color: #d0d067;
-    background: linear-gradient(to bottom, #baba36 0%, #959516 100%);
+.personatge(@color1, @color2, @color3, @urlImatge) {
+    background-color: @color1;
+    background: linear-gradient(to bottom, @color2 0%, @color3 100%);
     &:after {
-        border-top-color: #959516;
+        border-top-color: @color3;
     }
     &:before {
-        background-image: url(../images/hd.png);
+        background-image: url(@urlImatge);
     }
 }
 
+.harvey {
+    .personatge(#d0d067, #baba36, #959516, "../images/hd.png")
+}
+
 .joker {
-    background-color: #239a67;
-    background: linear-gradient(to bottom, #3fcc90 0%, #239a67 100%);
-    &:after {
-        border-top-color: #239a67;
-    }
-    &:before {
-        background-image: url(../images/joker.png);
-    }
+    .personatge(#239a67, #3fcc90, #239a67, "../images/joker.png")
 }
