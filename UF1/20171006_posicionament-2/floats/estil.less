@@ -1,0 +1,112 @@
+body {
+    font-family: arial, sans-serif;
+    line-height: 1.3em;
+}
+
+header {
+    background-color: lime;
+}
+
+footer {
+    background-color: yellow;
+}
+
+main {
+    background-color: #a8f8ff;
+}
+
+aside img {
+    display: block;
+    width: 100%;
+}
+
+main {
+    position: relative;
+    overflow: auto;
+    nav, section, aside {
+        float: left;
+        padding: 50px;
+        box-sizing: border-box; // El padding i el border no compten en l'amplada !!!!!
+    }
+    nav {
+        width: 20%;
+        border-right: 1px solid black;
+        margin-right: -1px;
+    }
+    section,
+    aside {
+        //width: ~"calc(40% - 2px)";
+        width: 40%;
+    }
+    section {
+        border-left: 1px solid red;
+    }
+    &:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 0px;
+        border-right: 1px solid blue;
+        //left: ~"calc(60% - 2px)";
+        left: 60%;
+        position: absolute;
+        top: 0px;
+    }
+}
+
+//-----------------------------------------------------
+#pestanya li:hover:nth-child(2n) {
+    background-color: red;
+}
+
+#pestanya li:hover:nth-child(2n+1) {
+    background-color: blue;
+}
+
+#pestanya {
+    h2 {
+        font-weight: bold;
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 10px 10px 0px 0px;
+    }
+    ul {
+        display: none;
+        border: 1px solid black;
+        padding: 10px;
+    }
+    position: fixed;
+    display: block;
+    bottom: 0px;
+    right: 3%;
+    &:hover ul {
+        display: block;
+    }
+}
+
+//-----------
+footer li {
+    position: relative;
+    display: block;
+    background-color: lime;
+    padding: 20px;
+}
+
+footer li:hover {
+    background-color: red;
+}
+
+footer>ul>li {
+    float: left;
+    &:hover>ul {
+        display: block;
+    }
+}
+
+footer>ul ul {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 2px;
+}
