@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+}
+
+.noveo {
+    //visibility: hidden;
+    display: none;
+    margin: 200px;
+}
+
+.veo {
+    visibility: visible;
+}
+
+.coses_inline * {
+    vertical-align: bottom;
+    border: 3px dashed lime;
+    padding: 2px;
+    margin: 3px;
+}
+
+.coses_float * {
+    display: block;
+    float: left;
+}
+
+.coses_float {
+    background-color: red;
+    border: 2px solid black;
+    //float: left;      // SOLUCIÓ "BONA"
+    //overflow: auto;  // SOLUCIÓ BONA
+    /*&:after {
+        display: block;
+        content: "";
+        width: 0px;
+        height: 0px;
+        clear: both;
+    }*/
+}
+
+.capsa {
+    clear: both;
+}
