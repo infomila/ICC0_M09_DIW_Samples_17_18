@@ -3,8 +3,16 @@ body {
   font-family: arial, sans-serif;
   line-height: 1.3em;
 }
+html,
+body {
+  height: 100%;
+}
+main {
+  min-height: calc(100% - 30px);
+}
 header {
   background-color: lime;
+  height: 30px;
 }
 footer {
   background-color: yellow;
@@ -76,17 +84,27 @@ main:after {
 #pestanya:hover ul {
   display: block;
 }
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer ul {
+  padding: 0px;
+}
 footer li {
   position: relative;
   display: block;
   background-color: lime;
-  padding: 20px;
 }
 footer li:hover {
   background-color: red;
 }
 footer > ul > li {
   float: left;
+  width: 80px;
+  padding: 20px;
 }
 footer > ul > li:hover > ul {
   display: block;
@@ -95,5 +113,9 @@ footer > ul ul {
   display: none;
   position: absolute;
   bottom: 100%;
-  left: 2px;
+  left: 0px;
+  width: 100%;
+}
+footer li li {
+  width: 100%;
 }
