@@ -39,14 +39,12 @@ main aside {
 }
 main nav {
   width: 20%;
-  flex-grow: 1;
-  border-right: 1px solid black;
+  border-right: 100px solid black;
   margin-right: -1px;
 }
 main section,
 main aside {
   width: 40%;
-  flex-grow: 1;
 }
 main section {
   border-left: 1px solid red;
