@@ -1,7 +1,22 @@
 html {
     height: 100%;
+    background-color: lime;
 }
 
+//--------------------------------------------
+#rdoS1:checked ~ nav label:nth-of-type(1) {
+    display: block;
+}
+
+#rdoS2:checked ~ nav label:nth-of-type(2) {
+    display: block;
+}
+
+#rdoS3:checked ~ nav label:nth-of-type(3) {
+    display: block;
+}
+
+//-------------------------------------------
 #rdoS1:checked ~ ul li:nth-child(1) img {
     //visibility: visible;
     opacity: 1;
@@ -40,7 +55,8 @@ html {
         left: 0px;
         transform: translateY(-50%);
         img {
-            width: 100%;
+            width: 100vw; //100%;
+            display: block;
             min-height: 300px;
             min-width: 471px;
             //visibility: hidden;
@@ -65,6 +81,43 @@ html {
             background-color: black;
             border: 3px solid black;
             box-shadow: -1px 1px 16px 1px rgba(255, 255, 255, 1);
+        }
+    }
+    nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        font-size: 2em;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        &.left {
+            left: 10px;
+            i {
+                //margin-left: -10px;
+                position: relative;
+                left: -5px;
+            }
+        }
+        &.right {
+            right: 10px;
+            i {
+                //margin-left: -10px;
+                position: relative;
+                left: 5px;
+            }
+        }
+        label {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
         }
     }
 }
