@@ -1,14 +1,44 @@
 @a1: 0deg;
 @a2: 0deg;
 @a3: 0deg;
+.base {
+    position: fixed;
+    right: 50%;
+    bottom: 0%;
+    border: 50px;
+    border-color: transparent;
+    border-bottom-color: purple;
+    width: 52px;
+    height: 12px;
+    border-style: solid;
+    &:after {
+        content: "";
+        display: block;
+        position: fixed;
+        right: 50%;
+        bottom: 0%;
+        transform: translateX(-2px);
+        border: 50px;
+        border-color: transparent;
+        border-bottom-color: lime;
+        width: 47px;
+        height: 8px;
+        border-style: solid;
+        z-index: 10;
+    }
+}
+
 .segment {
     position: absolute;
+    right: -1px;
+    bottom: 100%;
     display: block;
     width: 50px;
     height: 200px;
     background-color: lime;
     border: 1px solid purple;
     transform-origin: center bottom;
+    z-index: 100;
     &:after {
         display: block;
         content: "";
@@ -22,14 +52,7 @@
     }
 }
 
-.s1 .segment {
-    right: -1px;
-    bottom: 100%;
-}
-
 .s1 {
-    right: 50%;
-    bottom: 0%;
     transform: rotate(@a1);
     transition-delay: 0s;
 }
@@ -55,11 +78,49 @@
 html:hover {
     .s1 {
         transform: rotate(40deg);
+        transition-delay: 4s;
+        transition-duration: 2s;
     }
     .s2 {
         transform: rotate(60deg);
+        transition-delay: 2s;
+        transition-duration: 2s;
     }
     .s3 {
         transform: rotate(60deg);
+        transition-delay: 0s;
+        transition-duration: 2s;
+    }
+    .pinsa {
+        transform: translate(0px) translateX(50%);
+        transition-delay: 6s;
+        transition-duration: 2s;
+        &:nth-child(2) {
+            transform: translate(0px) translateX(50%);
+        }
+    }
+}
+
+.barra {
+    width: 200px;
+    height: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    &:after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+.pinsa {
+    width: 20px;
+    height: 40px;
+    right: 50%;
+    transform: translate(30px) translateX(50%);
+    &:after {
+        display: none;
+    }
+    &:nth-child(2) {
+        transform: translate(-30px) translateX(50%);
     }
 }
