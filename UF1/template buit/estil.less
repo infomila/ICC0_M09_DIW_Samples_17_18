@@ -1,0 +1,104 @@
+html {
+    height: 100%;
+    background-image: url(space_inv.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@m: 4px;
+@h: 90px;
+@w: @h/2*sqrt(3px);
+li:hover:after {
+    //filter: grayscale();
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+li:after {
+    //filter: grayscale();
+    position: absolute;
+    top: @m;
+    left: @m;
+    content: "";
+    width: @w - @m * 2;
+    height: @h - @m * 2;
+    display: block;
+    //float: left;
+    background-image: url(space.jpg);
+    background-attachment: fixed;
+    transition: opacity 2s;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-size: cover;
+}
+
+li {
+    //border: 1px solid blue;
+    position: relative;
+    flex-shrink: 0;
+    width: @w;
+    height: @h;
+    display: block;
+    //background-color: red;
+    background-image: url(space_inv.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    //transition: filter 0.5s;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+ul:nth-child(2n) {
+    left: -@w /2;
+}
+
+ul {
+    height: 2 / 3 * @h ;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+main {
+    position: relative;
+    top: -2 / 3 * @h ;
+}
+
+
+/*
+li {
+    width:@w;height: @h;
+    display:block;
+    background-image: url(space.jpg);
+    background-attachment: fixed;
+   transition:filter 0.5s;
+-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    
+}
+
+
+li:nth-child(2){
+    position:absolute;
+    top:75%;
+    left:@w;
+}
+li:nth-child(3){
+    position:absolute;
+    top:75%;
+    left: 2* @w;
+}
+
+@iterator: 24;
+.loop (@index) when (@index > 0) {
+    li:nth-child(@{index})  {           position:absolute;
+        top:@index % 12;
+        left:40px;
+        left: ( @index )* @w - @index ;
+    }
+    .loop(@index - 1); // next iteration
+}
+.loop (0) {} // exit loop
+.loop (@iterator); // draw loop
+ */

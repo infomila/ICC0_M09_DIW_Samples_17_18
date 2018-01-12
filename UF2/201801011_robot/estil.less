@@ -1,0 +1,65 @@
+@a1: 0deg;
+@a2: 0deg;
+@a3: 0deg;
+.segment {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 200px;
+    background-color: lime;
+    border: 1px solid purple;
+    transform-origin: center bottom;
+    &:after {
+        display: block;
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: purple;
+        position: absolute;
+        bottom: -25px;
+        right: 0px;
+    }
+}
+
+.s1 .segment {
+    right: -1px;
+    bottom: 100%;
+}
+
+.s1 {
+    right: 50%;
+    bottom: 0%;
+    transform: rotate(@a1);
+    transition-delay: 0s;
+}
+
+.s2 {
+    transform: rotate(@a1);
+    transition-delay: 2s;
+}
+
+.s3 {
+    transform: rotate(@a3);
+    height: 150px;
+    transition-delay: 4s;
+}
+
+//--------------------------------------
+.segment {
+    //transition: transform 2s;
+    transition-duration: 2s;
+    transition-property: transform;
+}
+
+html:hover {
+    .s1 {
+        transform: rotate(40deg);
+    }
+    .s2 {
+        transform: rotate(60deg);
+    }
+    .s3 {
+        transform: rotate(60deg);
+    }
+}

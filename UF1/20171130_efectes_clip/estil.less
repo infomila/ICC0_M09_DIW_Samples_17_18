@@ -1,0 +1,42 @@
+@top: 50px;
+@left: 20px;
+@width: 200px;
+@height: 50px;
+li {
+    float: left;
+    display: block;
+    position: relative;
+    //height: 110px;
+    width: 100px;
+}
+
+img {
+    //filter:blur(1px);
+    //transition: filter 1s;
+    width: 200px;
+    border-style: none;
+    //display: block;
+    //position:absolute;
+    // clip: rect(@top, @left+@width, @top+@height, @left);
+    /* -webkit-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);*/
+    clip-path: url("#myClip");
+}
+
+img:hover {
+    filter: blur(10px);
+    transition: filter 1s;
+}
+
+ul {
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    //clip: rect(0px, 250px, 500px, 0px);
+    transition: clip 1s;
+}
+
+ul:hover {
+    //clip: rect(0px, 500px, 500px, 250px);
+}
